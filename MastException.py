@@ -1,0 +1,2 @@
+class MastException(Exception):
+    pass

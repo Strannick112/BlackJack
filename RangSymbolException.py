@@ -1,0 +1,2 @@
+class RangSymbolException(Exception):
+    pass
