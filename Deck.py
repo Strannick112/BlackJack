@@ -8,20 +8,20 @@ from Rang import Rang
 
 class Deck:
     def __init__(self):
-        self.deck = []
+        self.__deck = []
         for rang in Rang.rangs.keys():
             for mast in Mast.symbols:
-                self.deck.append( Card( Rang(rang), Mast(mast) ) )
+                self.__deck.append(Card(Rang(rang), Mast(mast)))
         self.__iter = None
         self.sort()
     
     def sort(self):
         for _ in range(100):
-            first_card_index = random.randint(0, len(self.deck) - 1)
-            second_card_index = random.randint(0, len(self.deck) - 1)
-            self.deck[first_card_index], self.deck[second_card_index] \
-                = (self.deck[second_card_index], self.deck[first_card_index])
-        self.__iter = self.deck.__iter__()
+            first_card_index = random.randint(0, len(self.__deck) - 1)
+            second_card_index = random.randint(0, len(self.__deck) - 1)
+            self.__deck[first_card_index], self.__deck[second_card_index] \
+                = (self.__deck[second_card_index], self.__deck[first_card_index])
+        self.__iter = self.__deck.__iter__()
             
     def get_card(self):
         try:

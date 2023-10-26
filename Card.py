@@ -4,20 +4,25 @@ from Rang import Rang
 
 class Card:
     def __init__(self, rang: Rang, mast: Mast):
-        self.rang = rang
-        self.mast = mast
+        self.__rang = rang
+        self.__mast = mast
 
     def get_points(self):
-        return self.rang.points
+        return self.__rang.points
+
+    def get_rang(self):
+        return self.__rang.symbol
+
+    def get_mast(self):
+        return self.__mast.symbol
 
     def show(self):
         print(
-f"""
+f"""-----------
+|{self.__rang.symbol}{self.__mast.symbol}       |
+|         |
+|         |
+|         |
+|       {self.__rang.symbol}{self.__mast.symbol}|
 -----------
-|{self.rang.symbol}{self.mast.symbol}       |
-|         |
-|         |
-|         |
-|         |
-|       {self.rang.symbol}{self.mast.symbol}|
 """)
